@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Slider } from 'react-native';
 
-export default class UdaciSlider extends Component {
-    render() {
-        return (
-            <View>
-                <Text>UdaciSlider</Text>
-                <Text>{this.props.value}</Text>
-            </View>
-        )
-    }
-}
+export default UdaciSlider = ({ max, step, value, onChange, unit}) => (
+    <View>
+        <Slider
+            maximumValue={max}
+            minimumValue={0}
+            step={step}
+            value={value}
+            onValueChange={onChange}
+        />
+        <View>
+            <Text>{value}</Text>
+            <Text>{unit}</Text>
+        </View>
+    </View>
+)

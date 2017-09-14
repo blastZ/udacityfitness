@@ -1,7 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { black } from './colors';
+import { white, purple, lightPurp, blue, orange, red } from './colors';
+
+const styles = StyleSheet.create({
+    entryIcon: {
+        padding: 5,
+        borderRadius: 10
+    }
+})
 
 export function isBetween (num, x, y) {
   if (num >= x && num <= y) {
@@ -58,7 +65,8 @@ export function getMetricMetaInfo(metric) {
                     <View>
                         <MaterialIcons
                             name='directions-run'
-                            color={black}
+                            color={white}
+                            style={[styles.entryIcon, {backgroundColor: red}]}
                             size={35}
                         />
                     </View>
@@ -76,7 +84,8 @@ export function getMetricMetaInfo(metric) {
                     <View>
                         <MaterialCommunityIcons
                             name='bike'
-                            color={black}
+                            color={white}
+                            style={[styles.entryIcon, {backgroundColor: orange}]}
                             size={32}
                         />
                     </View>
@@ -94,7 +103,8 @@ export function getMetricMetaInfo(metric) {
                     <View>
                         <MaterialCommunityIcons
                             name='swim'
-                            color={black}
+                            color={white}
+                            style={[styles.entryIcon, {backgroundColor: blue}]}
                             size={35}
                         />
                     </View>
@@ -112,7 +122,8 @@ export function getMetricMetaInfo(metric) {
                     <View>
                         <FontAwesome
                             name='bed'
-                            color={black}
+                            color={white}
+                            style={[styles.entryIcon, {backgroundColor: purple}]}
                             size={30}
                         />
                     </View>
@@ -130,7 +141,8 @@ export function getMetricMetaInfo(metric) {
                     <View>
                         <MaterialCommunityIcons
                             name='food'
-                            color={black}
+                            color={white}
+                            style={[styles.entryIcon, {backgroundColor: lightPurp}]}
                             size={35}
                         />
                     </View>
@@ -142,4 +154,10 @@ export function getMetricMetaInfo(metric) {
     return typeof metric === 'undefined'
         ? info
         : info[metric]
+}
+
+export function getDailyReminderValue() {
+    return {
+        today: "Don't forget to log your data today!"
+    }
 }
