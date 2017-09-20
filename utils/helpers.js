@@ -5,7 +5,8 @@ import { white, purple, lightPurp, blue, orange, red } from './colors';
 
 const styles = StyleSheet.create({
     entryIcon: {
-        padding: 5,
+        padding: 8,
+        margin: 5,
         borderRadius: 10
     }
 })
