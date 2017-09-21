@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     entryIcon: {
         padding: 8,
         margin: 5,
-        borderRadius: 10
+        borderRadius: 10,
+        marginRight: 20
     }
 })
 
